@@ -13,7 +13,7 @@ var searchData=
   ['of_20nfc_10',['Activation of NFC',['../nfc_mainpage.html#activation_of_nfc',1,'']]],
   ['off_5fstate_11',['OFF_STATE',['../nbgl__types_8h.html#a156ae9665622eed3fb8eb12c41731d9dadffcb2598647909336a7342b9168031e',1,'nbgl_types.h']]],
   ['offcolor_12',['offColor',['../structnbgl__switch__s.html#a025119108582d8d7fa7534a6f9bea694',1,'nbgl_switch_s']]],
-  ['offset_13',['offset',['../structnbgl__line__s.html#ae2201f739fd267331677de3866ca08dd',1,'nbgl_line_s::offset'],['../structbuffer__t.html#a9a35fa449753777373af2fa24389ad7c',1,'buffer_t::offset']]],
+  ['offset_13',['offset',['../structbuffer__t.html#a9a35fa449753777373af2fa24389ad7c',1,'buffer_t::offset'],['../structnbgl__line__s.html#ae2201f739fd267331677de3866ca08dd',1,'nbgl_line_s::offset']]],
   ['offset_5fcdata_14',['OFFSET_CDATA',['../offsets_8h.html#ada78606bfc75323763f4f281808f907c',1,'offsets.h']]],
   ['offset_5fcla_15',['OFFSET_CLA',['../offsets_8h.html#acaf89bdf82598d4b1bd331bced6e88da',1,'offsets.h']]],
   ['offset_5fins_16',['OFFSET_INS',['../offsets_8h.html#a7027739b30c9c58216207bfc828de338',1,'offsets.h']]],
@@ -28,7 +28,7 @@ var searchData=
   ['onactioncallback_25',['onActionCallback',['../structnbgl__layoutDescription__s.html#a923aed719baabcf052e1b63460bee469',1,'nbgl_layoutDescription_s']]],
   ['onbottom_26',['onBottom',['../structnbgl__layoutButton__t.html#ab39eab0d280236ddba111d7dbcf45f20',1,'nbgl_layoutButton_t']]],
   ['oncolor_27',['onColor',['../structnbgl__switch__s.html#a867ff5330c9ef0306d312bfc09645feb',1,'nbgl_switch_s']]],
-  ['ondrawcallback_28',['ondrawcallback',['../structnbgl__image__s.html#a35a3131c298693970fefa1eb72f02f41',1,'nbgl_image_s::onDrawCallback'],['../structnbgl__button__s.html#a3f83f2f0b4dc395fbd619f235adce81d',1,'nbgl_button_s::onDrawCallback'],['../structnbgl__text__area__s.html#a2c91665754f4eb741494782dee2b7d26',1,'nbgl_text_area_s::onDrawCallback']]],
+  ['ondrawcallback_28',['ondrawcallback',['../structnbgl__text__area__s.html#a2c91665754f4eb741494782dee2b7d26',1,'nbgl_text_area_s::onDrawCallback'],['../structnbgl__image__s.html#a35a3131c298693970fefa1eb72f02f41',1,'nbgl_image_s::onDrawCallback'],['../structnbgl__button__s.html#a3f83f2f0b4dc395fbd619f235adce81d',1,'nbgl_button_s::onDrawCallback']]],
   ['onimagedrawcallback_5ft_29',['onImageDrawCallback_t',['../nbgl__obj_8h.html#a29916353b45efc216a47cde732bebb80',1,'nbgl_obj.h']]],
   ['ontextdrawcallback_5ft_30',['onTextDrawCallback_t',['../nbgl__obj_8h.html#a8c33cbf178161ff0a332dc296f008a22',1,'nbgl_obj.h']]],
   ['ontop_31',['onTop',['../structnbgl__contentCenteredInfo__t.html#a7aec6e12465bedf866b3fa51104e226c',1,'nbgl_contentCenteredInfo_t']]],
@@ -37,8 +37,7 @@ var searchData=
   ['options_34',['Compilation options',['../nbgl_mainpage.html#nbgl_building',1,'']]],
   ['os_5fget_5furi_5fheader_35',['os_get_uri_header',['../nfc__ndef_8h.html#ad3b822d9a96dbb03a2015ac0e06e8cf3',1,'nfc_ndef.h']]],
   ['os_5fndef_5fto_5fstring_36',['os_ndef_to_string',['../nfc__ndef_8h.html#afcf247d6f1483900066313636758ecf1',1,'nfc_ndef.h']]],
-  ['os_5fndef_5fto_5fstring2_37',['os_ndef_to_string2',['../nfc__ndef_8h.html#a0f81cab0f758c71d35273f711f442883',1,'nfc_ndef.h']]],
-  ['os_5fparse_5fndef_38',['os_parse_ndef',['../nfc__ndef_8h.html#a6c85d6248ba648dcaa49a0d5eb10d76e',1,'nfc_ndef.h']]],
-  ['out_5fof_5ftouch_39',['OUT_OF_TOUCH',['../nbgl__types_8h.html#a3740adc715354911139e2117a3722ca8a8dae41777b2a209b753cbe92211b6392',1,'nbgl_types.h']]],
-  ['overall_20architecture_40',['Overall architecture',['../nbgl_mainpage.html#mainpage_overall_archi',1,'']]]
+  ['os_5fparse_5fndef_37',['os_parse_ndef',['../nfc__ndef_8h.html#a6c85d6248ba648dcaa49a0d5eb10d76e',1,'nfc_ndef.h']]],
+  ['out_5fof_5ftouch_38',['OUT_OF_TOUCH',['../nbgl__types_8h.html#a3740adc715354911139e2117a3722ca8a8dae41777b2a209b753cbe92211b6392',1,'nbgl_types.h']]],
+  ['overall_20architecture_39',['Overall architecture',['../nbgl_mainpage.html#mainpage_overall_archi',1,'']]]
 ];
