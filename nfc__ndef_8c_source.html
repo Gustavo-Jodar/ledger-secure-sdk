@@ -92,7 +92,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *   GLOBAL FUNCTIONS</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> **********************/</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><a class="code hl_typedef" href="usbd__conf_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code hl_function" href="nfc__ndef_8h.html#ad3b822d9a96dbb03a2015ac0e06e8cf3">os_get_uri_header</a>(<a class="code hl_typedef" href="usbd__conf_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> uri_id, <span class="keywordtype">char</span> *uri_header)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>uint16_t <a class="code hl_function" href="nfc__ndef_8h.html#ad3b822d9a96dbb03a2015ac0e06e8cf3">os_get_uri_header</a>(uint8_t uri_id, <span class="keywordtype">char</span> *uri_header)</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">switch</span> (uri_id) {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">case</span> <a class="code hl_define" href="nfc__ndef_8h.html#a6b55ce9842a0a3ed4f88a77aae51f0cf">URI_ID_0x01</a>:</div>
@@ -207,9 +207,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">return</span> strlen(uri_header);</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><a class="code hl_typedef" href="usbd__conf_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="code hl_function" href="nfc__ndef_8h.html#a6c85d6248ba648dcaa49a0d5eb10d76e">os_parse_ndef</a>(<a class="code hl_typedef" href="usbd__conf_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *in_buffer, <a class="code hl_variable" href="nfc__ndef_8h.html#a0accc676f447db1d188182a33884c77b">ndef_struct_t</a> *parsed)</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>uint8_t <a class="code hl_function" href="nfc__ndef_8h.html#a6c85d6248ba648dcaa49a0d5eb10d76e">os_parse_ndef</a>(uint8_t *in_buffer, <a class="code hl_variable" href="nfc__ndef_8h.html#a0accc676f447db1d188182a33884c77b">ndef_struct_t</a> *parsed)</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>{</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <a class="code hl_typedef" href="usbd__conf_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> text_length, info_length;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    uint8_t text_length, info_length;</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    parsed-&gt;ndef_type = in_buffer[APDU_OFF_P1];</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    parsed-&gt;uri_id    = in_buffer[APDU_OFF_P2];</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    text_length       = in_buffer[APDU_OFF_DATA];</div>
@@ -229,41 +229,39 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>}</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><a class="code hl_typedef" href="usbd__conf_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="code hl_function" href="nfc__ndef_8h.html#afcf247d6f1483900066313636758ecf1">os_ndef_to_string</a>(<a class="code hl_variable" href="nfc__ndef_8h.html#a0accc676f447db1d188182a33884c77b">ndef_struct_t</a> *ndef_message, <span class="keywordtype">char</span> *out_string)</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>uint16_t <a class="code hl_function" href="nfc__ndef_8h.html#afcf247d6f1483900066313636758ecf1">os_ndef_to_string</a>(<a class="code hl_variable" href="nfc__ndef_8h.html#a0accc676f447db1d188182a33884c77b">ndef_struct_t</a> *ndef_message, <span class="keywordtype">char</span> *out_string)</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>{</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <a class="code hl_typedef" href="usbd__conf_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> size_text   = strnlen(ndef_message-&gt;text, <a class="code hl_define" href="nfc__ndef_8h.html#a491a3453ff1cd82022b153bab895c7e5">NFC_TEXT_MAX_LEN</a>);</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <a class="code hl_typedef" href="usbd__conf_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> size_info   = strnlen(ndef_message-&gt;info, <a class="code hl_define" href="nfc__ndef_8h.html#a3b16e2e1374ee0182a2b374926f2d949">NFC_INFO_MAX_LEN</a>);</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <a class="code hl_typedef" href="usbd__conf_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> size_header = 0;</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">if</span> (size_text &gt; <a class="code hl_define" href="nfc__ndef_8h.html#a491a3453ff1cd82022b153bab895c7e5">NFC_TEXT_MAX_LEN</a> || size_info &gt; <a class="code hl_define" href="nfc__ndef_8h.html#a3b16e2e1374ee0182a2b374926f2d949">NFC_INFO_MAX_LEN</a>) {</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    }</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordflow">if</span> (ndef_message-&gt;ndef_type == <a class="code hl_define" href="nfc__ndef_8h.html#ac38015c0429d282ebbeb3519f607e31f">NFC_NDEF_TYPE_TEXT</a>) {</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        strncpy(out_string, ndef_message-&gt;text, size_text);</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordflow">return</span> size_text;</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    }</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ndef_message-&gt;ndef_type == <a class="code hl_define" href="nfc__ndef_8h.html#aafd3f57e154e356fe9023035d06f41b5">NFC_NDEF_TYPE_URI</a>) {</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        size_header = <a class="code hl_function" href="nfc__ndef_8h.html#ad3b822d9a96dbb03a2015ac0e06e8cf3">os_get_uri_header</a>(ndef_message-&gt;uri_id, out_string);</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordflow">if</span> (size_header + size_text &gt; <a class="code hl_define" href="nfc__ndef_8h.html#ab6cfce5cc8cdc4050b69dc27b521d524">URI_ID_STRING_MAX_LEN</a> + <a class="code hl_define" href="nfc__ndef_8h.html#a491a3453ff1cd82022b153bab895c7e5">NFC_TEXT_MAX_LEN</a>) {</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        }</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        strncpy(&amp;out_string[size_header], ndef_message-&gt;text, size_text);</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="keywordflow">if</span> (ndef_message-&gt;info[0] != <span class="charliteral">&#39;\0&#39;</span>) {</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            out_string[size_text + (size_header++)] = <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            <span class="keywordflow">if</span> (size_header + size_text + size_info &gt; <a class="code hl_define" href="nfc__ndef_8h.html#ae84e8309504255ab237c249d0f71be1d">NFC_NDEF_MAX_SIZE</a>) {</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            }</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            strncpy(&amp;out_string[size_header + size_text], ndef_message-&gt;info, size_info);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    uint16_t tot_length      = 0;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    uint16_t length_internal = 0;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">if</span> (ndef_message-&gt;ndef_type == <a class="code hl_define" href="nfc__ndef_8h.html#ac38015c0429d282ebbeb3519f607e31f">NFC_NDEF_TYPE_TEXT</a>) {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        tot_length += strlen(ndef_message-&gt;text);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordflow">if</span> (tot_length &gt; <a class="code hl_define" href="nfc__ndef_8h.html#a491a3453ff1cd82022b153bab895c7e5">NFC_TEXT_MAX_LEN</a>) {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        strcpy(out_string, ndef_message-&gt;text);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ndef_message-&gt;ndef_type == <a class="code hl_define" href="nfc__ndef_8h.html#aafd3f57e154e356fe9023035d06f41b5">NFC_NDEF_TYPE_URI</a>) {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        tot_length += <a class="code hl_function" href="nfc__ndef_8h.html#ad3b822d9a96dbb03a2015ac0e06e8cf3">os_get_uri_header</a>(ndef_message-&gt;uri_id, out_string);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        length_internal = strlen(ndef_message-&gt;text);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="keywordflow">if</span> (tot_length + length_internal &gt; <a class="code hl_define" href="nfc__ndef_8h.html#ab6cfce5cc8cdc4050b69dc27b521d524">URI_ID_STRING_MAX_LEN</a> + <a class="code hl_define" href="nfc__ndef_8h.html#a491a3453ff1cd82022b153bab895c7e5">NFC_TEXT_MAX_LEN</a>) {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        strcpy(&amp;out_string[tot_length], ndef_message-&gt;text);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        tot_length += length_internal;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="keywordflow">if</span> (ndef_message-&gt;info[0] != <span class="charliteral">&#39;\0&#39;</span>) {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            out_string[tot_length++] = <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            length_internal          = strlen(ndef_message-&gt;info);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            <span class="keywordflow">if</span> (tot_length + length_internal &gt; <a class="code hl_define" href="nfc__ndef_8h.html#ae84e8309504255ab237c249d0f71be1d">NFC_NDEF_MAX_SIZE</a>) {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            strcpy(&amp;out_string[tot_length], ndef_message-&gt;info);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            tot_length += length_internal;</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        }</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keywordflow">return</span> size_header + size_text + size_info;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    }</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>}</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="preprocessor">#endif  </span><span class="comment">// HAVE_NDEF_SUPPORT</span></div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="preprocessor">#endif  </span><span class="comment">// HAVE_NFC</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    }</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordflow">return</span> tot_length;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>}</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="preprocessor">#endif  </span><span class="comment">// HAVE_NDEF_SUPPORT</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="preprocessor">#endif  </span><span class="comment">// HAVE_NFC</span></div>
 <div class="ttc" id="anfc__ndef_8h_html"><div class="ttname"><a href="nfc__ndef_8h.html">nfc_ndef.h</a></div></div>
 <div class="ttc" id="anfc__ndef_8h_html_a05fced658c9669a244f7ea30bb8e3714"><div class="ttname"><a href="nfc__ndef_8h.html#a05fced658c9669a244f7ea30bb8e3714">URI_ID_0x07_STRING</a></div><div class="ttdeci">#define URI_ID_0x07_STRING</div><div class="ttdef"><b>Definition</b> <a href="nfc__ndef_8h_source.html#l00055">nfc_ndef.h:55</a></div></div>
 <div class="ttc" id="anfc__ndef_8h_html_a067b13821af196c64dc6f20292ecfa8c"><div class="ttname"><a href="nfc__ndef_8h.html#a067b13821af196c64dc6f20292ecfa8c">URI_ID_0x23_STRING</a></div><div class="ttdeci">#define URI_ID_0x23_STRING</div><div class="ttdef"><b>Definition</b> <a href="nfc__ndef_8h_source.html#l00083">nfc_ndef.h:83</a></div></div>
@@ -345,8 +343,6 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="anfc__ndef_8h_html_afa4e404618f9beb1fc4a26b13994c24b"><div class="ttname"><a href="nfc__ndef_8h.html#afa4e404618f9beb1fc4a26b13994c24b">URI_ID_0x08</a></div><div class="ttdeci">#define URI_ID_0x08</div><div class="ttdef"><b>Definition</b> <a href="nfc__ndef_8h_source.html#l00019">nfc_ndef.h:19</a></div></div>
 <div class="ttc" id="anfc__ndef_8h_html_afcf247d6f1483900066313636758ecf1"><div class="ttname"><a href="nfc__ndef_8h.html#afcf247d6f1483900066313636758ecf1">os_ndef_to_string</a></div><div class="ttdeci">uint16_t os_ndef_to_string(ndef_struct_t *ndef_message, char *out_string)</div></div>
 <div class="ttc" id="anfc__ndef_8h_html_afd921b0bedec8e82f3bf613a61d974ab"><div class="ttname"><a href="nfc__ndef_8h.html#afd921b0bedec8e82f3bf613a61d974ab">URI_ID_0x16_STRING</a></div><div class="ttdeci">#define URI_ID_0x16_STRING</div><div class="ttdef"><b>Definition</b> <a href="nfc__ndef_8h_source.html#l00070">nfc_ndef.h:70</a></div></div>
-<div class="ttc" id="ausbd__conf_8h_html_a273cf69d639a59973b6019625df33e30"><div class="ttname"><a href="usbd__conf_8h.html#a273cf69d639a59973b6019625df33e30">uint16_t</a></div><div class="ttdeci">unsigned short uint16_t</div><div class="ttdef"><b>Definition</b> <a href="usbd__conf_8h_source.html#l00054">usbd_conf.h:54</a></div></div>
-<div class="ttc" id="ausbd__conf_8h_html_aba7bc1797add20fe3efdf37ced1182c5"><div class="ttname"><a href="usbd__conf_8h.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></div><div class="ttdeci">unsigned char uint8_t</div><div class="ttdef"><b>Definition</b> <a href="usbd__conf_8h_source.html#l00053">usbd_conf.h:53</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
