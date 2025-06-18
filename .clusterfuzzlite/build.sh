@@ -2,7 +2,7 @@
 
 # build fuzzers
 pushd fuzzing
-cmake -S . -B build -G Ninja
-cmake --build build
+cmake -H. -B build
+make -C build
 mv ./build/fuzz_* "${OUT}"
 popd
